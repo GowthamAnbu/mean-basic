@@ -1,4 +1,4 @@
-<form #employeeForm="ngForm">
+<!-- <form #employeeForm="ngForm">
     <div>
         <label for="firstName">First Name: </label>
         <input type="text" name="firstName" required [(ngModel)]="newEmployee.firstName" #firstName="ngModel">
@@ -22,4 +22,20 @@
     </div>
     <button (click)="saveEmployeeDetails()" [disabled]="!employeeForm.form.valid">save</button>
 </form>
-<button [routerLink]="['/home']">cancel</button>
+<button [routerLink]="['/home']">cancel</button> -->
+<form #employeeForm="ngForm">
+      <div class="form-group">
+        <label for="firstName" class="col-form-label">First Name:</label>
+        <input type="text" class="form-control" name="firstName" placeholder="eg.Nick" required [(ngModel)]="newEmployee.firstName" #firstName="ngModel">
+      </div>
+    <div class="form-group">
+      <label for="lastName" class="col-form-label">Last Name:</label>
+      <input type="text" class="form-control" name="lastName" placeholder="eg.jackson"  required [(ngModel)]="newEmployee.lastName" #lastName="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="dob" class="col-form-label">Date of Birth</label>
+      <input type="text" class="form-control" name="dob" placeholder="04-04-1984" required [(ngModel)]="newEmployee.dob" #dob="ngModel">
+    </div>
+  <button type="button" class="btn btn-success" (click)="saveEmployeeDetails()" [disabled]="!employeeForm.form.valid">save</button>
+  <button type="button" class="btn btn-success" [routerLink]="['/home']">cancel</button>
+</form>
